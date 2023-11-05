@@ -6,7 +6,6 @@
       {
         "id": "dec9b572a85b97d4",
         "type": "tabs",
-        "dimension": 45.71106094808127,
         "children": [
           {
             "id": "435528630388831c",
@@ -23,17 +22,16 @@
         ]
       },
       {
-        "id": "13f566cffa901997",
+        "id": "105ac34720e99ed2",
         "type": "tabs",
-        "dimension": 54.28893905191874,
         "children": [
           {
-            "id": "908f6205731718de",
+            "id": "58855f8b5de49b69",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "dns.md",
+                "file": "topics queue.md",
                 "mode": "source",
                 "source": false
               }
@@ -105,7 +103,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "dns.md",
+                "file": "topics queue.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "dns.md",
+                "file": "topics queue.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -145,12 +143,20 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "dns.md"
+                "file": "topics queue.md"
               }
+            }
+          },
+          {
+            "id": "5ba2cb7fb911de8d",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {}
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -166,9 +172,9 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "908f6205731718de",
+  "active": "3ad0494ed457d67d",
   "lastOpenFiles": [
-    "topics queue.md",
-    "dns.md"
+    "dns.md",
+    "topics queue.md"
   ]
 }

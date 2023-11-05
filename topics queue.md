@@ -8,7 +8,8 @@
 - PKI
 - SSO, OIDC, OAuth
 - Cookie vs local storage vs session storage
-- DNS lookup
+- DNS 
+- 
 
 ##### Advanced concepts to revisit
 - Benefits of Microservices

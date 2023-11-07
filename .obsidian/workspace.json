@@ -43,13 +43,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "tls.md",
+                "file": "pki.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -115,7 +116,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "dns.md",
+                "file": "topics queue.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -132,7 +133,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "dns.md",
+                "file": "topics queue.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -155,7 +156,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "dns.md"
+                "file": "topics queue.md"
               }
             }
           },
@@ -184,10 +185,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "58855f8b5de49b69",
+  "active": "435528630388831c",
   "lastOpenFiles": [
-    "topics queue.md",
+    "pki.md",
     "dns.md",
-    "tls.md"
+    "topics queue.md"
   ]
 }

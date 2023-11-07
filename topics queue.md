@@ -2,20 +2,19 @@
 - ACID properties
 - BASE properties
 - SQL vs NoSQL
-	- REST vs GraphQL vs SOAP
+- REST vs GraphQL vs SOAP
 - Polling vs long-polling vs SSE vs websockets
-- TLS, SSH
-- PKI
 - SSO, OIDC, OAuth
 - Cookie vs local storage vs session storage
-- DNS 
-- 
+- CORS
+- XSS, SQL injection, cross-site request forgery
 
 ##### Advanced concepts to revisit
 - Benefits of Microservices
 - Event-driven architecture
-- Distributed transactions and eventual consistency
+- Distributed transactions and eventual consistency - 2PC, SAGA
 - CAP theorem
+- CQRS
 - Clustered vs non-clustered index
 - Database isolation levels
 - Caching strategies
@@ -25,10 +24,7 @@
 ##### Real life system architectures to revisit
 - Chat messaging application
 - Video streaming application
-- 
+- URL link shortener
 
 
 ---
-#### Why would you choose noSQL over SQL database?
-- flexible schema
-

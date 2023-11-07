@@ -1,1 +1,0 @@
-transport layer security. aka ssl: secure sockets layer

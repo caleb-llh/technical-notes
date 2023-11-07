@@ -18,13 +18,7 @@
                 "source": false
               }
             }
-          }
-        ]
-      },
-      {
-        "id": "105ac34720e99ed2",
-        "type": "tabs",
-        "children": [
+          },
           {
             "id": "58855f8b5de49b69",
             "type": "leaf",
@@ -36,9 +30,28 @@
                 "source": false
               }
             }
+          }
+        ],
+        "currentTab": 1
+      },
+      {
+        "id": "105ac34720e99ed2",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "932cc3e87c708b21",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "tls.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           },
           {
-            "id": "7b50bd80318a513b",
+            "id": "c349e6a87fe0500f",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -48,9 +61,33 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "593fc81bc171b19f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "kube-system-components.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "840ac800ad9fedba",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "kube-system-components.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -116,7 +153,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "topics queue.md",
+                "file": "kube-system-components.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +170,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "topics queue.md",
+                "file": "kube-system-components.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -156,7 +193,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "topics queue.md"
+                "file": "kube-system-components.md"
               }
             }
           },
@@ -185,10 +222,15 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "435528630388831c",
+  "active": "593fc81bc171b19f",
   "lastOpenFiles": [
+    "kubernetes-security.md",
+    "kube-system-components.md",
     "pki.md",
     "dns.md",
+    "tls.md",
+    "ssh.md",
+    "vpn.md",
     "topics queue.md"
   ]
 }

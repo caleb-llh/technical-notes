@@ -1,10 +1,10 @@
 domain name system
-# terminologies
+## terminologies
 - FQDN: fully qualified domain name + protocol + path = url
 - zone: domain namespace (a domain excluding its subdomains)
 
 
-# resolving hostname
+## resolving hostname
 ##### how does your computer get the IP address of a particular hostname?
 1. browser dns cache
 2.  os dns cache
@@ -15,7 +15,7 @@ domain name system
 7. authoritative nameserver - dns hosting provider (dictionary on shelf)
 
 
-# dns record lifecycle
+## dns record lifecycle
 ##### how do you register a domain?
 - registrant to visit a domain registrar: e.g. godaddy
 	- registrar reserves domain in domain registry: "global database of domain names"

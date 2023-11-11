@@ -209,9 +209,9 @@
   "active": "b9da75b236d48a4b",
   "lastOpenFiles": [
     "kubernetes-security.md",
+    "INDEX.md",
     "kubernetes-administration.md",
     "kubernetes-core.md",
-    "INDEX.md",
     "tls.md",
     "pki.md",
     "dns.md",

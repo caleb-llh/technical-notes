@@ -3,7 +3,7 @@
 	- [ ] ACID properties
 	- [ ] BASE properties
 	- [ ] SQL vs NoSQL
-- Internet infrastructure
+- Application development
 	- [ ] REST vs GraphQL vs SOAP vs WebSockets vs webhook vs gRPC
 	- [ ] REST conventions
 	- [ ] Client notification: Polling vs long-polling vs SSE vs websockets

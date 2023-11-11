@@ -15,10 +15,17 @@
 	- [ ] XSS, SQL injection, cross-site request forgery
 	- [x] DNS
 	- [ ] OSI layers, network protocols
+- Programming
+	- [ ] OOP: Inheritance, Polymorphism, Encapsulation, Abstraction
+	- [ ] OOP: Object vs Class vs Interface
+	- [ ] Async programming: callbacks, event loop, blocking
+	- [ ] programming paradigms: Functional programming vs OOP vs procedural vs 
+	- [ ] Code translation: Compilers vs Interpreters vs assemblers
+	- [ ] SOLID principles
 - OS
 	- [ ] Networking: NAT tables, route tables
 	- [ ] Runtime: threads, processes, containers, VMs
-	- [ ] Concurrency: Locks, semaphores
+	- [ ] Concurrency: Locks, semaphores, mutexs
 	- [ ] Storage: File system, block storage
 - Cryptography
 	- [x] PKI, TLS, SSH, VPNs
@@ -48,10 +55,10 @@
 	- [ ] Cloud infrastructure
 	- [ ] Deployment strategies
 
-##### Technologies Deep dive
+##### Technologies deep dive
 - [ ] Databases: Postgres, MongoDB
 - [ ] Brokers/Queues: redis, rabbitmq, kafka
-- [ ] 
+- [ ] Container runtime: docker swarm, kubernetes
 
 ##### Real life applications/use cases
 - [ ] back-of-envelop calculation cheatsheet (storage, network bandwidth, latency numbers for IO)
@@ -63,5 +70,3 @@
 - [ ] web crawler
 - [ ] large scale deduplication
 
-
----

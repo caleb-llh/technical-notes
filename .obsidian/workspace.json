@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "topics queue.md",
+                "file": "INDEX.md",
                 "mode": "source",
                 "source": false
               }
@@ -31,13 +31,38 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "kube-system-components.md",
+                "file": "kubernetes-core.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "4d89569b1f29b3fb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "kubernetes-security.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "e5fc3f778d414504",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "kubernetes-administration.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -103,7 +128,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "kube-system-components.md",
+                "file": "INDEX.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,7 +145,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "kube-system-components.md",
+                "file": "INDEX.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -143,7 +168,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "kube-system-components.md"
+                "file": "INDEX.md"
               }
             }
           },
@@ -181,11 +206,12 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "435528630388831c",
+  "active": "b9da75b236d48a4b",
   "lastOpenFiles": [
-    "topics queue.md",
-    "kube-system-components.md",
     "kubernetes-security.md",
+    "kubernetes-administration.md",
+    "kubernetes-core.md",
+    "INDEX.md",
     "tls.md",
     "pki.md",
     "dns.md",

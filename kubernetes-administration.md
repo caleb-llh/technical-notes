@@ -72,9 +72,9 @@ find cert path from inspecting etcd or looking at etcd startup command options
 `export ETCDCTL_ADPI=3`
 - stop kube-apiserver since it depends on etcd: `systemctl stop kube-apiserver.service`
 - restore snapshot: `etcdctl snapshot restore snapshot.db --data-dir /var/lib/etcd-from-backup`
-	- this configures a new etcd cluster and configures members as new members. use new data directory for the new cluster
+	- this configures a new etcd cluster and configures members as new members. use new data directory (in host filesystem) for the new cluster
 - if kubeadm
-	- update host volume path to new data dir (for kubeadm, i.e. etcd is a pod)
+	- in `/etc/kubernetes/manifests/etcd.yaml`: update volume host path to new data dir (for kubeadm, i.e. etcd is a staticpod)
 - else
 	- update `--data-dir /var/lib/etcd-from-backup` in etcd startup options in etcd.service (not for kubeadm because it references container filesystem instead of host filesystem)
 	- `systemctl daemon-reload && systemctl restart etcd.service`

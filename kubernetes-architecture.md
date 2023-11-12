@@ -28,7 +28,7 @@ https://kubernetes.io/docs/reference/networking/ports-and-protocols/
 # kubernetes system files
 
 ##### how does kubeadm deploy kubernetes components?
-- kubeadm deploys kube-proxy as DaemonSets, and control plane components as Pods. (core-dns as Deployment)
+- kubeadm deploys kube-proxy as DaemonSets, and control plane components as StaticPods. (core-dns as Deployment)
 - Caveat: 
 	- kubeadm does not deploy kubelets - have to download binary, create systemd service. 
 	- for kubeadm, kubelets are necessary in control plane nodes, since control plane components are scheduled as pods.
@@ -45,3 +45,6 @@ https://kubernetes.io/docs/reference/networking/ports-and-protocols/
 - e.g. `/usr/local/bin/kubelet`
 **service files**
 - e.g. `/etc/systemd/system/kubelet.service` --> `ExecStart=/usr/local/bin/kubelet --<args>`
+
+##### where to find etcd data directory?
+- `/var/lib/etcd`

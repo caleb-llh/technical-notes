@@ -142,7 +142,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "INDEX.md",
+                "file": "kubernetes-administration.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -159,7 +159,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "INDEX.md",
+                "file": "kubernetes-administration.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -182,7 +182,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "INDEX.md"
+                "file": "kubernetes-administration.md"
               }
             }
           },
@@ -220,12 +220,12 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "c53cb1663a28da8b",
+  "active": "b9da75b236d48a4b",
   "lastOpenFiles": [
-    "kubernetes-administration.md",
     "kubernetes-architecture.md",
-    "kubernetes-under-the-hood.md",
+    "kubernetes-administration.md",
     "kubernetes-security.md",
+    "kubernetes-under-the-hood.md",
     "INDEX.md",
     "tls.md",
     "pki.md",

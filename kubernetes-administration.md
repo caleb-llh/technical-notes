@@ -25,11 +25,12 @@ then run
 - count number of pods: `kubectl get pods --no-headers | wc -l`
 - view API versions, verbs, and other information about resources: `kubectl api-resources -o wide`
 - change version of etcdctl: 
-	- `ETCD_API=3 ./etcdctl {command}` or
-	- `export ETCD_API=3` then run your etcd command
+	- `ETCDCTL_API=3 ./etcdctl {command}` or
+	- `export ETCDCTL_API=3` then run your etcd command
 
 ##### kubernetes cheatsheet
 - kubectl cheatsheet - https://kubernetes.io/docs/reference/kubectl/cheatsheet/
+	- useful exam setup: autocomplete, kubectl alias, export ETCDCTL_API=3
 - cka cheatsheet - https://medium.com/@mrJTY/kubernetes-cka-exam-cheat-sheet-6194ccf162bb
 
 ---
@@ -41,17 +42,39 @@ then run
 ##### how to upgrade a cluster?
 - upgrade master nodes followed by worker nodes one by one. if single master node is down, control plane functionalities are down, but applications in worker nodes still continue to run.
 	1. drain node: `kubectl drain {node-name} --ignore-daemonsets` - pods get evicted and rescheduled, node is cordoned.
-	2. install kubeadm `apt-get update && apt-get install kubeadm=X.X.X`
+	2. install kubeadm `apt-get update && apt-get upgrade{or install} kubeadm=X.X.X`
 		1. view kubeadm versions using `apt-cache madison kubeadm`
 	3. find out latest kubernetes version: `kubeadm upgrade plan`
 	4. upgrade control plane components (for master node): `kubeadm upgrade apply vX.X.X`
 		1. upgrade apply only for the first master node, for additional master nodes, run `kubeadm upgrade node`
 	5. upgrade kubelet:  
-		1. `apt-get upgrade kubelet=X.X.X`
-		2. `kubeadm upgrade node config --kubelet-version vX.X.X`
+		1. `apt-get upgrade{or install} kubelet=X.X.X kubectl=X.X.X`
+		2. `kubeadm upgrade node`
 		3. `systemctl daemon-reload && systemctl restart kubelet`
 	6. uncordon node: `kubectl uncordon {node-name}`
 - `kubectl get nodes` tells you the kubernetes version running on each node's kubelet
 
 ---
 # cluster backup/restore
+
+##### how.to backup etcd?
+`export ETCDCTL_ADPI=3`
+- save etcd snapshot:  `etcdctl snapshot save snapshot.db`
+- inspect snapshot: `etcdctl snapshot status snapshot.db`
+for TLS-enabled etcd, run `etcdctl {command}` with
+- `--cacert`
+- `--cert`
+- `--key`
+- `--endpoints=[127.0.0.1:2379]`
+find cert path from inspecting etcd or looking at etcd startup command options
+
+##### how ro restore etcd backup?
+`export ETCDCTL_ADPI=3`
+- stop kube-apiserver since it depends on etcd: `systemctl stop kube-apiserver.service`
+- restore snapshot: `etcdctl snapshot restore snapshot.db --data-dir /var/lib/etcd-from-backup`
+	- this configures a new etcd cluster and configures members as new members. use new data directory for the new cluster
+- if kubeadm
+	- update host volume path to new data dir (for kubeadm, i.e. etcd is a pod)
+- else
+	- update `--data-dir /var/lib/etcd-from-backup` in etcd startup options in etcd.service (not for kubeadm because it references container filesystem instead of host filesystem)
+	- `systemctl daemon-reload && systemctl restart etcd.service`

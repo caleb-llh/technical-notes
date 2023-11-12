@@ -1,3 +1,5 @@
+```table-of-contents
+```
 # kubernetes components
 ##### what are the control plane components?
 - **kube-apiserver** (input): horizontally scalable API server to read/manipulate cluster state. only kube-apiserver talks to etcd
@@ -6,6 +8,7 @@
 - **kube-scheduler**(output): simply decides which node should run which pod. but it is the node kubelet that starts the pod.
 - **cloud-controller-manager**(output): runs controllers (NodeController, RouteController, ServiceController). calls the cloud API.
 - **dns**: not strictly required. e.g. coredns
+
 ##### what are the node components?
 - **kubelet**(input): registers node, listens to kube-apiserver, provides periodic status reports, communicates with container runtime (e.g. docker, cri-o, containerd) in a "CRI" way to manage container lifecycle
 - **kube-proxy**: 
@@ -13,11 +16,22 @@
 	- services are virtual components - just a mapping of service IP to pod IPs. kube-proxy modifies iptable rules (iptable handles NAT) to store these mappings.
 	- pod network (internal virtual network) spans across cluster, is created by a network plugin
 
+##### what are the TCP ports that are distinct to kubernetes?
+- 2379,2380 - etcd
+- 6443 - kube-api
+- 10250 - kubelet
+- 10257 - kube-controller-manager
+- 10259 - kube-scheduler
+- 30000- 32767 - NodePort services
+https://kubernetes.io/docs/reference/networking/ports-and-protocols/
+
 # kubernetes system files
 
 ##### how does kubeadm deploy kubernetes components?
-- kubeadm deploys kube-proxy as DaemonSets, and control plane components as Deployments
-- Caveat: kubeadm does not deploy kubelets - have to download binary, create systemd service. 
+- kubeadm deploys kube-proxy as DaemonSets, and control plane components as Pods. (core-dns as Deployment)
+- Caveat: 
+	- kubeadm does not deploy kubelets - have to download binary, create systemd service. 
+	- for kubeadm, kubelets are necessary in control plane nodes, since control plane components are scheduled as pods.
 ##### kubeadm: where to find manifests for kube system components?
 - e.g. `/etc/kubernetes/manifests/kube-apiserver.yaml`
 - e.g. `/etc/kubernetes/manifests/etcd.yaml`

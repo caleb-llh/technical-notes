@@ -4,12 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "6c05c016784fe69d",
+        "id": "95cf924c34d93547",
         "type": "tabs",
-        "dimension": 46.26358695652174,
+        "dimension": 42.65232974910394,
         "children": [
           {
-            "id": "b9da75b236d48a4b",
+            "id": "c53cb1663a28da8b",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -25,7 +25,7 @@
       {
         "id": "dec9b572a85b97d4",
         "type": "tabs",
-        "dimension": 53.73641304347826,
+        "dimension": 57.34767025089605,
         "children": [
           {
             "id": "435528630388831c",
@@ -34,6 +34,18 @@
               "type": "markdown",
               "state": {
                 "file": "kubernetes-architecture.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "b9da75b236d48a4b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "kubernetes-administration.md",
                 "mode": "source",
                 "source": false
               }
@@ -62,21 +74,9 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "e5fc3f778d414504",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "kubernetes-administration.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -142,7 +142,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "kubernetes-security.md",
+                "file": "INDEX.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -159,7 +159,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "kubernetes-security.md",
+                "file": "INDEX.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -182,7 +182,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "kubernetes-security.md"
+                "file": "INDEX.md"
               }
             }
           },
@@ -220,12 +220,12 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "4d89569b1f29b3fb",
+  "active": "c53cb1663a28da8b",
   "lastOpenFiles": [
+    "kubernetes-administration.md",
+    "kubernetes-architecture.md",
     "kubernetes-under-the-hood.md",
     "kubernetes-security.md",
-    "kubernetes-architecture.md",
-    "kubernetes-administration.md",
     "INDEX.md",
     "tls.md",
     "pki.md",

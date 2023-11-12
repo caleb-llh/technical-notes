@@ -1,68 +1,68 @@
-##### Basic concepts to revisit
-- Databases
-	- [ ] ACID properties
-	- [ ] BASE properties
+##### basic concepts
+- databases
+	- [ ] ACID, BASE
 	- [ ] SQL vs NoSQL
-- Application development
+	- [ ] SQL schema design and queries
+- application development
 	- [ ] REST vs GraphQL vs SOAP vs WebSockets vs webhook vs gRPC
 	- [ ] REST conventions, response codes
-	- [ ] Client notification: Polling vs long-polling vs SSE vs websockets
+	- [ ] client notification: Polling vs long-polling vs SSE vs websockets
 	- [ ] MVC, MVVM, MVP, VIPER
 	- [ ] SSO, OIDC, OAuth, LDAP/AD
 	- [ ] JWT vs API key vs basic auth
-	- [ ] Cookie vs local storage vs session storage
+	- [ ] cookie vs local storage vs session storage
 	- [ ] CORS
 	- [ ] XSS, SQL injection, cross-site request forgery
 	- [x] DNS
 	- [ ] OSI layers, network protocols
-- Programming
+- programming
 	- [ ] OOP: Inheritance, Polymorphism, Encapsulation, Abstraction
 	- [ ] OOP: Object vs Class vs Interface
-	- [ ] Async programming: callbacks, event loop, blocking
-	- [ ] programming paradigms: Functional programming vs OOP vs procedural vs 
-	- [ ] Code translation: Compilers vs Interpreters vs assemblers
+	- [ ] async programming: callbacks, event loop, blocking
+	- [ ] programming paradigms: Functional programming vs OOP vs procedural 
+	- [ ] code translation: Compilers vs Interpreters vs assemblers
 	- [ ] SOLID principles
 - OS
-	- [ ] Networking: NAT tables, route tables
-	- [ ] Runtime: threads, processes, containers, VMs
-	- [ ] Concurrency: Locks, semaphores, mutexs
-	- [ ] Storage: File system, block storage
-- Cryptography
+	- [ ] networking: NAT tables, route tables
+	- [ ] runtime: threads, processes, containers, VMs
+	- [ ] concurrency: Locks, semaphores, mutexs
+	- [ ] storage: File system, block storage
+- cryptography
 	- [x] PKI, TLS, SSH, VPNs
-##### Advanced concepts to revisit
+##### advanced concepts
 - backend architecture
-	- [ ] Microservices vs SOA vs monolithic vs serverless vs CQRS
+	- [ ] microservices vs SOA vs monolithic vs serverless vs CQRS
 - advanced API concepts
-	- [ ] Rate limiting vs throttling
+	- [ ] rate limiting vs throttling
 	- [ ] session stickiness
 	- [ ] pagination
 	- [ ] versioning
 - distributed computing
 	- [ ] CAP theorem
-	- [ ] Distributed systems algorithms - paxos, raft, consistent hashing
-	- [ ] load balancing strategies (CDN, DNS, L4, L7)
+	- [ ] distributed systems algorithms - paxos, raft, consistent hashing
+	- [ ] stateful vs stateless applications
 	- [ ] robustness: retries, backoffs, health checks /heartbeats, ephemeral infrastructure
 - decoupling services
 	- [ ] brokers vs queues vs streams
 	- [ ] event driven vs event sourcing pattern
-	- [ ] Distributed transactions and eventual consistency - 2PC, SAGA
+	- [ ] distributed transactions and eventual consistency - 2PC, SAGA
 - scaling databases
-	- [ ] Clustered vs non-clustered index
-	- [ ] Database isolation levels
-	- [ ] Caching strategies
-	- [ ] Sharding and replication strategies
-- Devops
+	- [ ] clustered vs non-clustered index
+	- [ ] database isolation levels
+	- [ ] caching strategies
+	- [ ] sharding and replication strategies
+- devops
 	- [ ] CICD
-	- [ ] Observability
-	- [ ] Cloud infrastructure
-	- [ ] Deployment strategies
+	- [ ] observability
+	- [ ] cloud infrastructure
+	- [ ] deployment strategies
 
-##### Technologies deep dive
-- [ ] Databases: Postgres, MongoDB
-- [ ] Brokers/Queues: redis, rabbitmq, kafka
-- [ ] Container runtime: docker swarm, kubernetes
+##### technologies deep dive
+- [ ] databases: Postgres, MongoDB
+- [ ] brokers/queues: redis, rabbitmq, kafka
+- [ ] container runtime: docker swarm, kubernetes
 
-##### Real life applications/use cases
+##### real life applications/use cases
 - [ ] back-of-envelop calculation cheatsheet (storage, network bandwidth, latency numbers for storage)
 - [ ] chat messaging application
 - [ ] video streaming application

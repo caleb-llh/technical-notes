@@ -1,3 +1,5 @@
+```table-of-contents
+```
 # authentication
 **options**
 - files: username, pass
@@ -8,7 +10,7 @@
 
 ## tls
 - mtls used for communication across kube system components
-- upon start up (as a systemd service or pod), all kube system components requires specifying of 
+- as start up command options (as a systemd service or pod), all kube system components requires specifying of
 	- ca cert, so as to validate each others' certs 
 	- its server cert + key (if it's a server)
 	- its client cert + key (if it's a client)
@@ -21,7 +23,7 @@ when you call kube-api you need to feed in the client-key, client-certificate, c
 
 ##### how is kube api configured with certs?
 - when generating kube-api server cert CSR, alternate dns and ip are specified along in  `openssl.cnf` 
-- specify ca, server, client cert/key upon start up
+- specify ca, server, client cert/key as start up command options
 - specify in `kube-config.yaml` the following info:
 	- ca cert
 	- kube-api endpoint
@@ -37,7 +39,7 @@ when you call kube-api you need to feed in the client-key, client-certificate, c
 	- server cert identified by its own node name
 	- server key
 
-##### how do I set up kubernetes's certificates API client?
+##### how to set up kubernetes's certificates API client?
 - kube-controller-manager has the ca server, for csr-approving, csr-signing. need to specify cluster signing cert and key file upon start up.
 administrative steps:
 1. generate key: `openssl genrsa -out myuser.key 2048`

@@ -40,25 +40,31 @@ when you call kube-api you need to feed in the client-key, client-certificate, c
 ##### how do I set up kubernetes's certificates API client?
 - kube-controller-manager has the ca server, for csr-approving, csr-signing. need to specify cluster signing cert and key file upon start up.
 administrative steps:
-1. generate key via openssl
-2. generate csr using key, via openssl. inspect csr using `openssl req -verify -in test.csr -text -noout`
-3. base64 encode csr: `cat test.csr | base64 -w 0
+1. generate key: `openssl genrsa -out myuser.key 2048`
+2. generate csr using key: `openssl req -new -key myuser.key -out myuser.csr -subj "/CN=myuser"`.
+	1. inspect csr using `openssl req -verify -in myuser.csr -text -noout`
+3. base64 encode csr: `cat myuser.csr | base64 -w 0
 4. create csr manifest. specs include, groups, usage and base64 csr (request). view csr using `kubectl get csr`. apply the csr manifest
-5. approve csr: `kubectl certificate appprove test`
+5. approve csr: `kubectl certificate appprove myuser`
 6. decode cert to plain text: `echo "<base64-cert>" | base64 --decode
 
 
-##### how to assign permissions to client certificate?
-- include group when generating cert e.g. `/O=system:masters`
+##### how to assign identity to client certificate?
+- include group in the subject option when generating csr 
+	- groups e.g. `/O=system:masters` or `/O=system:node:`
+	- users e.g. `/CN=myuser` 
 - [[pki#how to generate a cert?]]
 - [[tls#openssl cheatsheet]]
 
 ## service accounts
 
 ##### what are the responsibilities of TokenRequestAPI?
-- creation of SA comes with a bearer token that is stored as a kubernetes secret
-- for every namespace, a "default" service account is created (limited permissions) , of which its token is automatically mounted as secrets `var/run/secrets/kubernetes.io/serviceaccount` on every pod in that namespace.
-	- you can specify your own service account in pod definition
+- for every namespace, a default service account is created (limited permissions) 
+- every pod in that namespace assumes the default service account automatically:
+	- a token is automatically issued by TokenRequestAPI and secret is mounted as a projected volume  `var/run/secrets/kubernetes.io/serviceaccount` 
+	- projected volumes allow the pod to access multiple volumes (PVCs, Configmaps, Secrets) in a particular file directory.
+- TokenRequestAPI ensures the token issued is time-bound (exp), audience-bound (aud), object-bound
+- After creating your own service account, you need to call TokenRequestAPI `kubectl create token {sa-name}` to create a bearer token that is stored as a kubernetes secret
 ---
 # authorization
 - authorization-modes specified at kubeapi-server upon start up (sequentially, as long as one of them allow) e.g. Nodes, RBAC
@@ -71,6 +77,25 @@ administrative steps:
 ##### what are the kubernetes objects used for authorization?
 - Role: specifies permissions as rules (apiGroups, resources, verbs). 
 	- Verbs: get/watch/list/create/delete
-- RoleBinding: specifies user name (subjects) and role (roleRefs)
+- RoleBinding: specifies user/serviceaccount/group name (subjects) and role (roleRefs)
 	- To test permissions: `kubectl auth can-i get pods --as test-user`
 - ClusterRole and ClusterRoleBindings are similar but for cluster/non-namespace scoped objects (e.g. nodes, PVs,CSRs), or namespace scoped objects (e.g. pods, PVCs, secrets) across all namespace.
+- The identity of the subject/principal is identified in the credential - TLS cert subject
+
+---
+# docker security
+##### how do I run as a non root user with added capabilities?
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: security-context-demo-4
+spec:
+  containers:
+  - name: sec-ctx-4
+    image: gcr.io/google-samples/node-hello:1.0
+    securityContext:
+      runAsUser: 1001
+      capabilities:
+        add: ["NET_ADMIN", "SYS_TIME"]
+```

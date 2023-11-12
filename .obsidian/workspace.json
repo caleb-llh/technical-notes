@@ -6,6 +6,7 @@
       {
         "id": "6c05c016784fe69d",
         "type": "tabs",
+        "dimension": 46.26358695652174,
         "children": [
           {
             "id": "b9da75b236d48a4b",
@@ -24,6 +25,7 @@
       {
         "id": "dec9b572a85b97d4",
         "type": "tabs",
+        "dimension": 53.73641304347826,
         "children": [
           {
             "id": "435528630388831c",
@@ -31,7 +33,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "kubernetes-core.md",
+                "file": "kubernetes-architecture.md",
                 "mode": "source",
                 "source": false
               }
@@ -61,8 +63,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -128,7 +129,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "INDEX.md",
+                "file": "kubernetes-architecture.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -145,7 +146,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "INDEX.md",
+                "file": "kubernetes-architecture.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -168,7 +169,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "INDEX.md"
+                "file": "kubernetes-architecture.md"
               }
             }
           },
@@ -206,12 +207,12 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "b9da75b236d48a4b",
+  "active": "435528630388831c",
   "lastOpenFiles": [
+    "kubernetes-administration.md",
+    "kubernetes-architecture.md",
     "kubernetes-security.md",
     "INDEX.md",
-    "kubernetes-administration.md",
-    "kubernetes-core.md",
     "tls.md",
     "pki.md",
     "dns.md",

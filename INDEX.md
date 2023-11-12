@@ -5,7 +5,7 @@
 	- [ ] SQL vs NoSQL
 - Application development
 	- [ ] REST vs GraphQL vs SOAP vs WebSockets vs webhook vs gRPC
-	- [ ] REST conventions
+	- [ ] REST conventions, response codes
 	- [ ] Client notification: Polling vs long-polling vs SSE vs websockets
 	- [ ] MVC, MVVM, MVP, VIPER
 	- [ ] SSO, OIDC, OAuth, LDAP/AD
@@ -33,13 +33,15 @@
 - backend architecture
 	- [ ] Microservices vs SOA vs monolithic vs serverless vs CQRS
 - advanced API concepts
-	- [ ] Rate limiting
+	- [ ] Rate limiting vs throttling
 	- [ ] session stickiness
+	- [ ] pagination
+	- [ ] versioning
 - distributed computing
 	- [ ] CAP theorem
 	- [ ] Distributed systems algorithms - paxos, raft, consistent hashing
 	- [ ] load balancing strategies (CDN, DNS, L4, L7)
-	- [ ] robustness: retries, backoffs, health checks /heartbeats
+	- [ ] robustness: retries, backoffs, health checks /heartbeats, ephemeral infrastructure
 - decoupling services
 	- [ ] brokers vs queues vs streams
 	- [ ] event driven vs event sourcing pattern
@@ -61,9 +63,9 @@
 - [ ] Container runtime: docker swarm, kubernetes
 
 ##### Real life applications/use cases
-- [ ] back-of-envelop calculation cheatsheet (storage, network bandwidth, latency numbers for IO)
-- [ ] Chat messaging application
-- [ ] Video streaming application
+- [ ] back-of-envelop calculation cheatsheet (storage, network bandwidth, latency numbers for storage)
+- [ ] chat messaging application
+- [ ] video streaming application
 - [ ] google maps
 - [ ] gmail
 - [ ] URL link shortener

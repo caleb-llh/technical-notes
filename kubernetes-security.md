@@ -99,3 +99,14 @@ spec:
       capabilities:
         add: ["NET_ADMIN", "SYS_TIME"]
 ```
+
+---
+# network policies
+##### what are network policies?
+- specify ingress/egress traffic that are allowed - src/dest pod or namespace(using selectors) or ipBlock (using cidr), and ports
+- assign policy to a pod using selectors
+- network policies are like AWS security groups: they are stateful. If the request traffic is allowed, the return traffic is allowed.
+- Default behaviour: 
+	- Implicit allow: If no policy is defined, kubernetes has an "allow all" policy. 
+	- Implicit deny: If a policy is defined and assigned, but e.g. no egress rule is defined, egress is denied.
+- only supported by some CNI solutions e.g. calico, and not on others (won't be enforced) e.g. Flannel.

@@ -31,6 +31,9 @@ https://kubernetes.io/docs/reference/networking/ports-and-protocols/
 ##### some cheat code to remember
 - count number of pods: `kubectl get pods --no-headers | wc -l`
 - view API versions, verbs, and other information about resources: `kubectl api-resources -o wide`
+- change version of etcdctl: 
+	- `ETCD_API=3 ./etcdctl {command}` or
+	- `export ETCD_API=3` then run your etcd command
 
 ##### kubernetes cheatsheet
 - kubectl cheatsheet - https://kubernetes.io/docs/reference/kubectl/cheatsheet/

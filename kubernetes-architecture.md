@@ -32,6 +32,7 @@ https://kubernetes.io/docs/reference/networking/ports-and-protocols/
 - Caveat: 
 	- kubeadm does not deploy kubelets - have to download binary, create systemd service. 
 	- for kubeadm, kubelets are necessary in control plane nodes, since control plane components are scheduled as pods.
+
 ##### kubeadm: where to find manifests for kube system components?
 - e.g. `/etc/kubernetes/manifests/kube-apiserver.yaml`
 - e.g. `/etc/kubernetes/manifests/etcd.yaml`
@@ -40,6 +41,7 @@ https://kubernetes.io/docs/reference/networking/ports-and-protocols/
 ##### kubeadm: where to find tls certs for kube system components?
 - e.g. `/etc/kubernetes/pki/ca.crt`
 - e.g. `/etc/kubernetes/pki/etcd/ca.crt` (etcd has its own CA)
+
 ##### kube-manual: where to find systemd files and binaries for kube system components?
 **binaries**
 - e.g. `/usr/local/bin/kubelet`

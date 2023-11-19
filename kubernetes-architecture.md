@@ -7,7 +7,7 @@
 - **kube-controller-manager**(brain): runs all the controllers by default (e.g. NodeController, ReplicationController) unless specified otherwise during start up. controllers watches/poll etcd (via kube-apisever) for changes and calls kube-apiserver to achieve the desired state.
 - **kube-scheduler**(output): simply decides which node should run which pod. but it is the node kubelet that starts the pod.
 - **cloud-controller-manager**(output): runs controllers (NodeController, RouteController, ServiceController). calls the cloud API.
-- **dns**: not strictly required. e.g. coredns
+- **dns**: not strictly required. kubernetes uses coreDNS
 
 ##### what are the node components?
 - **kubelet**(input): registers node, listens to kube-apiserver, provides periodic status reports, communicates with container runtime (e.g. docker, cri-o, containerd) in a "CRI" way to manage container lifecycle
@@ -17,6 +17,7 @@
 	- pod network (internal virtual network) spans across cluster, is created by a network plugin
 
 ##### what are the TCP ports that are distinct to kubernetes?
+- 53 - dns
 - 2379,2380 - etcd
 - 6443 - kube-api
 - 10250 - kubelet
@@ -25,12 +26,20 @@
 - 30000- 32767 - NodePort services
 https://kubernetes.io/docs/reference/networking/ports-and-protocols/
 
+##### what are the resources for coreDNS?
+- service account: `coredns`
+- cluster role: `coredns`, `kube-dns`
+- cluster role binding: `coredns`, `kube-dns`
+- deployment: `coredns`
+- config map: `coredns` --> contains Corefile plugin (DNS config)
+- service: `coredns`
+
 # kubernetes system files
 
 ##### how does kubeadm deploy kubernetes components?
 - kubeadm deploys kube-proxy as DaemonSets, and control plane components as StaticPods. (core-dns as Deployment)
 - Caveat: 
-	- kubeadm does not deploy kubelets - have to download binary, create systemd service. 
+	- kubeadm does not deploy kubelets - have to download binary, create systemd service. (using apt and systemctl start)
 	- for kubeadm, kubelets are necessary in control plane nodes, since control plane components are scheduled as pods.
 
 ##### kubeadm: where to find manifests for kube system components?
@@ -47,6 +56,10 @@ https://kubernetes.io/docs/reference/networking/ports-and-protocols/
 - e.g. `/usr/local/bin/kubelet`
 **service files**
 - e.g. `/etc/systemd/system/kubelet.service` --> `ExecStart=/usr/local/bin/kubelet --<args>`
-
+##### where to find kubelet externalised configuration?
+- `/var/lib/kubelet/config.yaml`
 ##### where to find etcd data directory?
 - `/var/lib/etcd`
+
+##### where to find default kubeconfig?
+- `${HOME}/.kube/config.yaml`
